@@ -63,4 +63,4 @@ var calculatorModule = function (){
       saveMemory: saveMemory,
       clearMemory: clearMemory
   };
-};
+}();

@@ -1,0 +1,8 @@
+#key7, #key8, #key9, #keyDIVIDE, #keyCLEAR {
+	float:left;
+}
+
+#key4, #key5, #key6, #keyMULTIPLY{
+	float:left;
+	clear:left;
+}
