@@ -2,6 +2,7 @@ var calculatorModule = function (){
     //private
     var _total= 0;
     var _memory= 0;
+    
     function calculateTotal(x){
       if( typeof x !== 'number'){
         throw new Error('not a number'); 
