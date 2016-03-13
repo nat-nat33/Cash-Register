@@ -3,58 +3,6 @@ var cashReg = function(){
 var calculator= calculatorModule;
 console.log(calculator);
 
-//register functions for getting display on register
-
-// var register = {
-
-//   balance: 0,
-
-//   display: 0,
-
-//   getBal: function() {
-//     return this.balance;
-//   },
-
-//   cashIn: function() {
-//     this.balance += parseFloat(display.innerHTML);
-//     display.innerHTML = ' ';
-//     console.log(this.balance);
-//   },
-
-//   cashOut: function() {
-//     if (parseFloat(display.innerHTML) > this.balance) {
-//       display.innerHTML = 'INSUFFICIENT FUNDS';
-//       console.log('no funds');
-//     } else {
-//       this.balance -= parseFloat(display.innerHTML);
-//       display.innerHTML = ' ';
-//       console.log(this.balance);
-//     }
-//   }
-// };
-
-// document.getElementById('keyBALANCE').addEventListener('click', function(){
-//   register.getBal();
-//   console.log('current balance');
-//   console.log(register.getBal());
-//   console.log(register.balance);
-// });
-
-// document.getElementById('keyDEPOSIT').addEventListener('click', function(){
-//   register.cashIn();
-//   console.log('new balance after deposit');
-//   console.log(register.balance);
-// });
-
-// document.getElementById('keyWITHDRAW').addEventListener("click", function(){
-//   register.cashOut();
-//   console.log('new balance after withdraw');
-//   console.log(register.balance);
-// });
-
-
-
-
 //formatting register buttons
 var display = document.getElementById('display');
 var calc = document.getElementById('calc');
@@ -69,7 +17,6 @@ for(var i = 0; i < buttons.length; i++){
 	calc.appendChild(key);
 
 	key.addEventListener('click', function(){
-
 		if(this.id === 'key0'){
 			display.innerHTML += 0;			
 		} else if(this.id === 'key1'){
@@ -103,7 +50,54 @@ for(var i = 0; i < buttons.length; i++){
 }
 
 
+//register functions for getting display on register
 
+var register = {
+
+  balance: 0,
+
+  display: 0,
+
+  getBal: function() {
+    return this.balance;
+  },
+
+  cashIn: function() {
+    this.balance += parseFloat(display.innerHTML);
+    display.innerHTML = ' ';
+    console.log(this.balance);
+  },
+
+  cashOut: function() {
+    if (parseFloat(display.innerHTML) > this.balance) {
+      display.innerHTML = 'INSUFFICIENT FUNDS';
+      console.log('no funds');
+    } else {
+      this.balance -= parseFloat(display.innerHTML);
+      display.innerHTML = ' ';
+      console.log(this.balance);
+    }
+  }
+};
+
+document.getElementById('keyBALANCE').addEventListener('click', function(){
+  register.getBal();
+  console.log('current balance');
+  console.log(register.getBal());
+  console.log(register.balance);
+});
+
+document.getElementById('keyDEPOSIT').addEventListener('click', function(){
+  register.cashIn();
+  console.log('new balance after deposit');
+  console.log(register.balance);
+});
+
+document.getElementById('keyWITHDRAW').addEventListener("click", function(){
+  register.cashOut();
+  console.log('new balance after withdraw');
+  console.log(register.balance);
+});
 
 
 }();
