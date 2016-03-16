@@ -50,7 +50,7 @@ function generateButtons(){
 			} else if(this.id === 'keyCLEAR'){
 				display.innerHTML = null;
 			} else if(this.id === 'keyBALANCE'){
-				 getBal();
+				getBal();
 			} else if(this.id === 'keyDEPOSIT'){
 				cashIn();
 			} else if(this.id === 'keyWITHDRAW'){
@@ -88,13 +88,13 @@ function cashOut(){
       console.log(this.balance);
     }
   }
-
 }
+
 	return {
 		generateButtons: generateButtons(),
-		getBal: getBal,
-		cashIn: cashIn,
-		cashOut: cashOut,
+		getBal: cashReg().getBal,
+		cashIn: cashReg().cashIn,
+		cashOut: cashReg().cashOut,
 };
 
 
