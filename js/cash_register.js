@@ -49,11 +49,16 @@ function generateButtons(){
 				display.innerHTML += '.'; 
 			} else if(this.id === 'keyCLEAR'){
 				display.innerHTML = null;
-			} 
+			} else if(this.id === 'keyBALANCE'){
+				 getBal();
+			} else if(this.id === 'keyDEPOSIT'){
+				cashIn();
+			} else if(this.id === 'keyWITHDRAW'){
+				cashOut();
+			}
 		});
-	}
-}
-generateButtons();	
+	}	
+
 
 //register functions for getting display on register
 
@@ -83,26 +88,33 @@ function cashOut(){
       console.log(this.balance);
     }
   }
+
 }
-
-	document.getElementById('keyBALANCE').addEventListener('click', function(){
-	  register.getBal();
-	  console.log('current balance');
-	  console.log(register.getBal());
-	  console.log(register.balance);
-	});
-
-	document.getElementById('keyDEPOSIT').addEventListener('click', function(){
-	  register.cashIn();
-	  console.log('new balance after deposit');
-	  console.log(register.balance);
-	});
-
-	document.getElementById('keyWITHDRAW').addEventListener("click", function(){
-	  register.cashOut();
-	  console.log('new balance after withdraw');
-	  console.log(register.balance);
-	});
+	return {
+		generateButtons: generateButtons(),
+		getBal: getBal,
+		cashIn: cashIn,
+		cashOut: cashOut,
+};
 
 
+	// document.getElementById('keyBALANCE').addEventListener('click', function(){
+	//   cashReg.getBal();
+	//   console.log('current balance');
+	//   console.log(register.getBal());
+	//   console.log(register.balance);
+	// });
+
+	// document.getElementById('keyDEPOSIT').addEventListener('click', function(){
+	//   register.cashIn();
+	//   console.log('new balance after deposit');
+	//   console.log(register.balance);
+	// });
+
+	// document.getElementById('keyWITHDRAW').addEventListener("click", function(){
+	//   register.cashOut();
+	//   console.log('new balance after withdraw');
+	//   console.log(register.balance);
+	// });
 }();
+
