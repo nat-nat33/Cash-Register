@@ -2,6 +2,7 @@ var calculatorModule = function (){
     //private
     var _total= 0;
     var _memory= 0;
+    var prevOperator= [];
     
     function calculateTotal(x){
       if( typeof x !== 'number'){
@@ -13,32 +14,32 @@ var calculatorModule = function (){
     function getTotal(){
       return _total;//public
     }
-    function add(x){
+    function add(x, y){
       if( typeof x !== 'number'){
         throw new Error('not a number'); 
       }
-      _total += x;
+      _total = x + y;
       return _total;//public
     }
-    function subtract(x){
+    function subtract(x, y){
       if( typeof x !== 'number'){
         throw new Error('not a number'); 
       }
-      _total = _total-x; 
+      _total = x - y; 
       return _total;//public
     }
-    function multiply(x){
+    function multiply(x, y){
       if( typeof x !== 'number'){
         throw new Error('not a number'); 
       }
-      _total= _total * x;
+      _total= x * y;
       return _total;//public
     }
     function divide(x){
        if( typeof x !== 'number'){
         throw new Error('not a number'); 
       }
-      _total= _total/x;
+      _total= x / y;
       return _total; //public
     }
     function recallMemory(){

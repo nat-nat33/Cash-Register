@@ -1,8 +1,31 @@
-#key7, #key8, #key9, #keyDIVIDE, #keyCLEAR {
-	float:left;
+
+h1{
+	justify-content: center;
+	text-align: center;
+	color: #DAA520;
 }
 
-#key4, #key5, #key6, #keyMULTIPLY{
-	float:left;
-	clear:left;
+.main{
+
+	background-color: yellow;
+
 }
+
+
+
+
+/*
+#key7, #key8, #key9, #keyCLEAR{
+	float: left;
+	vertical-align: top;
+}
+
+#key4, #key5, #key6, #keyDEPOSIT{
+	float: left;
+	vertical-align: 
+}
+
+#key1, #key2, #key3, #keyWITHDRAW{
+	float: left;
+	display: inline-block;
+}*/
